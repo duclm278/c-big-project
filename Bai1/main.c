@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long factorial(long long n);
+long long combanation(long long n, long long k);
 
 int main(void)
 {
@@ -17,8 +17,7 @@ int main(void)
     // Read and write files
     while (fscanf(input, "%lld %lld\n", &n, &k) != EOF)
     {
-        nCk = factorial(n) / (factorial(k) * factorial(n - k));
-        fprintf(output, "%lld\n", nCk);
+        fprintf(output, "%lld\n", combanation(n, k));
     }
 
     // Close files
@@ -28,9 +27,13 @@ int main(void)
     return 0;
 }
 
-long long factorial(long long n)
+// https://en.wikipedia.org/wiki/Combination#Example_of_counting_combinations
+long long combanation(long long n, long long k)
 {
-    if (n == 0)
-        return 1;
-    return n * factorial(n - 1);
+    long long nCk = 1;
+    for (int i = n, j = 1; i >= n - (k - 1); i--, j++)
+    {
+        nCk = nCk * i / j;
+    }
+    return nCk;
 }
