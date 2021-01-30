@@ -85,7 +85,7 @@ int knapsack(int capacity, int N, item items[], int itemsSelected[])
         // Using the information inside the table we can backtrack and determine
         // which items were selected during the dynamic programming phase. The idea
         // is that if DP[i][sz] != DP[i-1][sz] then the item was selected. Subtract
-        // sz by w, increment count and repeat until DP[i][sz] == DP[i-1][sz].
+        // sz by w, increment count and repeat until DP[i][sz] == DP[i-1][sz]
         int count = 0;
         while (DP[i][sz] != DP[i - 1][sz])
         {
