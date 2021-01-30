@@ -55,7 +55,7 @@ void option1(void)
     student somebody;
 
     // Open SV2021.dat
-    FILE *input = fopen("SV2021.dat", "r");
+    FILE *input = fopen("SV2021.dat", "r+b");
 
     // Print out SV2021.dat
     while (fscanf(input, "%[^\t]\t%lf\n", somebody.name, &somebody.score) != EOF)
@@ -72,7 +72,7 @@ void option2(void)
     student new_student;
 
     // Open SV2021.dat
-    FILE *input = fopen("SV2021.dat", "a");
+    FILE *input = fopen("SV2021.dat", "a+b");
 
     // Get input and update SV2021.dat
     printf("Enter name: ");
@@ -93,7 +93,7 @@ void option3(void)
     int count = 0;
 
     // Open SV2021.dat
-    FILE *input = fopen("SV2021.dat", "r");
+    FILE *input = fopen("SV2021.dat", "r+b");
 
     // Get input
     printf("Enter name: ");
